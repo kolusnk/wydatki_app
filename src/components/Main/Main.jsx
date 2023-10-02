@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, CardHeader, CardContent, Typography, Grid, Divider } from '@mui/material'
 import Form from './Form/Form'
+import List from './List/List'
 
 function Main() {
   return (
@@ -14,7 +15,7 @@ function Main() {
         <CardContent>
           <Grid containter spacing={2}>
             <Grid item xs={12}>
-              {/* <List/> */}
+              <List/>
             </Grid>
 
           </Grid>
