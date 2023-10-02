@@ -1,14 +1,13 @@
-import { useState } from 'react';
 import Details from './components/Details/Details';
 import Grid from '@mui/material/Grid';
-import { StyledCard } from './components/styled/Card.styled';
 import Main from './components/Main/Main';
+import { Box } from '@mui/material';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-     <Grid container spacing={0} alignItems='center' justify="center" sx={{ height: '100vh' }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+     <Grid container spacing={2} alignItems='center' justify="center" sx={{ height: '100vh', width: '1200px' }}>
         <Grid item xs={12} sm={4}>
           <Details title="income"/>
         </Grid>
@@ -19,6 +18,7 @@ function App() {
           <Details title="expences"/>
         </Grid>
       </Grid>
+    </Box>
   )
 }
 
