@@ -1,5 +1,4 @@
 import React, { useReducer, createContext } from "react";
-
 import contextReducer from "./contextReducer";
 
 const initialState = JSON.parse(localStorage.getItem("transactions")) || [
@@ -79,6 +78,7 @@ export const Provider = ({ children }) => {
 
   const addTransaction = (transaction) => {
     dispatch({ type: "ADD_TRANSACTION", payload: transaction });
+    console.log(transaction);
   };
 
   const balance = transactions.reduce(
