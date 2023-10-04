@@ -1,10 +1,10 @@
 import React from "react";
 import { CardHeader, CardContent, Typography } from "@mui/material";
 import { Doughnut } from "react-chartjs-2";
-import { Chart, ArcElement } from "chart.js";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import useTransactions from "../../useTransactions";
 import { StyledCard } from "../styled/Card.styled";
-Chart.register(ArcElement);
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Details = ({ title }) => {
   const { total, chartData } = useTransactions(title);
