@@ -13,6 +13,7 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+import MySnackbar from "../../Snackbar/Snackbar";
 
 const initialState = {
   amount: "",
@@ -24,9 +25,11 @@ const initialState = {
 function Form() {
   const { addTransaction } = useContext(ExpenseTrackerContext);
   const [formData, setFormData] = useState(initialState);
+  const [open, setOpen] = useState(false);
 
   const createTransaction = () => {
     const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() };
+    setOpen(true);
     addTransaction({
       ...formData,
       amount: Number(formData.amount),
@@ -39,6 +42,7 @@ function Form() {
 
   return (
     <Grid container spacing={2}>
+      <MySnackbar open={open} setOpen={setOpen} />
       <Grid item xs={6}>
         <FormControl fullWidth>
           <InputLabel>Type</InputLabel>

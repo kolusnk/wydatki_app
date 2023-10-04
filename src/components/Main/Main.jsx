@@ -12,9 +12,9 @@ function Main() {
       <CardContent>
         <Typography align='center' variant='h5'>
           Total Balance
-          <Typography variant='h5' sx={{ fontWeight: "700" }}>
-            ${balance}
-          </Typography>
+        </Typography>
+        <Typography variant='h5' sx={{ fontWeight: "700" }}>
+          ${balance}
         </Typography>
         <Divider sx={{ margin: "10px 0 20px" }} />
         <Form />
