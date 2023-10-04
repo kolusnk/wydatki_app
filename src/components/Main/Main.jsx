@@ -8,7 +8,7 @@ function Main() {
   const { balance } = useContext(ExpenseTrackerContext);
   return (
     <Card>
-      <CardHeader title='Expences Tracker' subheader="We'll help you save money" />
+      <CardHeader title='Expenses Tracker' subheader="We'll help you save money" />
       <CardContent>
         <Typography align='center' variant='h5'>
           Total Balance
