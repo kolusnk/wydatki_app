@@ -22,12 +22,16 @@ const initialState = {
 };
 
 function Form() {
-  const [formData, setFormData] = useState(initialState);
   const { addTransaction } = useContext(ExpenseTrackerContext);
+  const [formData, setFormData] = useState(initialState);
 
   const createTransaction = () => {
     const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4() };
-    addTransaction(transaction);
+    addTransaction({
+      ...formData,
+      amount: Number(formData.amount),
+      id: uuidv4(),
+    });
     setFormData(initialState);
   };
 
@@ -43,7 +47,7 @@ function Form() {
             onChange={(e) => setFormData({ ...formData, type: e.target.value })}
           >
             <MenuItem value='Income'>Income</MenuItem>
-            <MenuItem value='Expense'>Expense</MenuItem>{" "}
+            <MenuItem value='Expense'>Expense</MenuItem>
           </Select>
         </FormControl>
       </Grid>
